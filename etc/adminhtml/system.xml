@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <section id="payment">
+      <group id="gerencianet_configuracoes" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Gerencianet - Configurações Gerais</label>
+        <field id="active" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Habilitado</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="ambiente" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Ambiente</label>
+          <source_model>Gerencianet\Magento2\Model\Adminhtml\Source\Ambiente</source_model>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="mtls" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Validação de mTLS</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="identificador_conta" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Identificador de Conta</label>
+          <validate>required-entry</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <!--field id="partner_token" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Partner Token</label>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field-->
+        <field id="order_status" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Novo Order Status</label>
+          <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+          <validate>required-entry</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <group id="gerencianet_credenciais_develop" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Credenciais de Desenvolvimento</label>
+          <field id="client_id" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Client ID</label>
+            <validate>required-entry</validate>
+          </field>
+          <field id="client_secret" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Client Secret</label>
+            <validate>required-entry</validate>
+          </field>
+          <depends>
+            <field id="active">1</field>
+            <field id="ambiente">developer</field>
+          </depends>
+        </group>
+        <group id="gerencianet_credenciais_production" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Credenciais de Produção</label>
+          <field id="client_id" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Client ID</label>
+            <validate>required-entry</validate>
+          </field>
+          <field id="client_secret" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Client Secret</label>
+            <validate>required-entry</validate>
+          </field>
+          <depends>
+            <field id="active">1</field>
+            <field id="ambiente">production</field>
+          </depends>
+        </group>
+      </group>
+      <group id="gerencianet_cc" translate="label" sortOrder="101" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Gerencianet - Cartão de Crédito</label>
+        <field id="active" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Habilitado</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Título</label>
+          <validate>required-entry</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="sort_order" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>
+            <![CDATA[Sort Order]]>
+          </label>
+          <frontend_class>validate-number</frontend_class>
+        </field>
+      </group>
+      <group id="gerencianet_boleto" translate="label" sortOrder="102" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Gerencianet - Boleto</label>
+        <field id="active" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Habilitado</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Título</label>
+          <validate>required-entry</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="validade" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Dias de validade do Boleto</label>
+          <validate>required-entry validate-digits</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="multa" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Multa após o vencimento</label>
+          <validate>required-entry validate-number</validate>
+          <comment>Informe um valor numérico entre 0 e no máximo 10%.</comment>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="juros" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Juros após o vencimento</label>
+          <validate>required-entry validate-number</validate>
+          <comment>Informe um valor numérico entre 0 e 0,33% por dia.</comment>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="sort_order" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>
+            <![CDATA[Sort Order]]>
+          </label>
+          <frontend_class>validate-number</frontend_class>
+        </field>
+        <group id="gerencianet_instrucoes_boleto" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Instruções no Boleto (aplicável somente se não houver Juros ou Multa configurado)</label>
+          <field id="linha1" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instruções (linha1)</label>
+            <validate>required-entry validate-length maximum-length-90</validate>
+            <comment>Máximo de 90 caracteres</comment>
+            <depends>
+              <field id="active">1</field>
+            </depends>
+          </field>
+          <field id="linha2" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instruções (linha2)</label>
+            <validate>required-entry validate-length maximum-length-90</validate>
+            <comment>Máximo de 90 caracteres</comment>
+            <depends>
+              <field id="active">1</field>
+            </depends>
+          </field>
+          <field id="linha3" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instruções (linha3)</label>
+            <validate>required-entry validate-length maximum-length-90</validate>
+            <comment>Máximo de 90 caracteres</comment>
+            <depends>
+              <field id="active">1</field>
+            </depends>
+          </field>
+          <field id="linha4" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instruções (linha4)</label>
+            <validate>required-entry validate-length maximum-length-90</validate>
+            <comment>Máximo de 90 caracteres</comment>
+            <depends>
+              <field id="active">1</field>
+            </depends>
+          </field>
+        </group>
+      </group>
+      <group id="gerencianet_pix" translate="label" sortOrder="103" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Gerencianet - Pix</label>
+        <field id="active" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Habilitado</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Título</label>
+          <validate>required-entry</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="validade" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Tempo de validade do Pix</label>
+          <validate>required-entry validate-digits</validate>
+          <comment>Tempo em segundos da validade do Pix ( 86400 equivale a 1 dia )</comment>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="certificado" translate="label" type="Gerencianet\Magento2\Block\System\Config\Form\Field\File" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Certificado PIX</label>
+          <backend_model>Gerencianet\Magento2\Model\Config\Backend\CertificadoUpload</backend_model>
+          <upload_dir config="system" scope_info="1">test</upload_dir>
+          <comment>Deve ser realizado o upload do certificado em formato .pem ou .p12</comment>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="chave_pix" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Chave PIX</label>
+          <validate>required-entry</validate>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+        <field id="sort_order" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>
+            <![CDATA[Sort Order]]>
+          </label>
+          <frontend_class>validate-number</frontend_class>
+          <depends>
+            <field id="active">1</field>
+          </depends>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>
