@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <head>
+    <script src="Gerencianet_Magento2::js/copytoclipboard.js" />
+    <css src="Gerencianet_Magento2::css/styles.css" />
+  </head>
+  <body>
+    <referenceContainer name="page.main.title">
+      <block class="Gerencianet\Magento2\Block\Checkout\Success" name="gerencianet.info.payment" template="Gerencianet_Magento2::checkout/success.phtml" after="-" />
+    </referenceContainer>
+  </body>
+</page>

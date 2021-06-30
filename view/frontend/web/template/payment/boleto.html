@@ -1,0 +1,84 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+  <div class="payment-method-title field choice">
+    <input type="radio" name="payment[method]" class="radio"
+      data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
+    <label data-bind="attr: {'for': getCode()}" class="label"><span data-bind="text: getTitle()"></span></label>
+  </div>
+  <div class="payment-method-content">
+    <!-- ko foreach: getRegion('messages') -->
+    <!-- ko template: getTemplate() -->
+    <!-- /ko -->
+    <!--/ko-->
+    <div class="payment-method-billing-address">
+      <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+      <!-- ko template: getTemplate() -->
+      <!-- /ko -->
+      <!--/ko-->
+    </div>
+    <form class="form" data-bind="attr: {'id': getCode() + '-form'}">
+
+      <div class="field number required">
+        <label data-bind="attr: {for: getCode() + '_cpf'}" class="label">
+          <span>
+            <!-- ko i18n: 'CPF/CNPJ'-->
+            <!-- /ko -->
+          </span>
+        </label>
+        <div class="control">
+          <input maxlength=18 onkeypress='mascaraMutuario(this,cpfCnpj)' type='text' data-validate="{'required-entry':true}" type="text"
+            name="payment[boleto_cpf]" class="input-text cpf" value="" data-bind="attr: {
+                                  autocomplete: off,
+                                  id: getCode() + '_cpf',
+                                  title: $t('CPF'),
+                                  'data-container': getCode() + '-cpf',
+                                  'data-validate': JSON.stringify({'required':true})},
+                          value: boletoOwnerCpf,
+                          valueUpdate: 'keyup'" />
+        </div>
+        <span id="card-cpf-msg"></span>
+      </div>
+      <div class="field number required" style="display: none;" id="gerencianet_boleto_company_name">
+        <label data-bind="attr: {for: getCode() + '_cc_company_name'}" class="label">
+          <span>Razão Social</span>
+        </label>
+        <div class="control">
+          <input required type="text" onkeypress="return ApenasLetras(event,this);" name="payment[cc_company_name]"
+            class="input-text" value="" data-validate="{'required-entry':true}" data-bind="attr: {
+                                        autocomplete: off,
+                                        id: getCode() + '_cc_company_name',
+                                        title: $t('Company Name'),
+                                        'data-container': getCode() + '-cc-company-name',
+                                        'data-validate': JSON.stringify({'required':true})},
+                                value: companyName,
+                                valueUpdate: 'keyup'" />
+        </div>
+      </div>
+    </form>
+    <!-- <p data-bind="html: getInstructions()"></p> -->
+    <div class="checkout-agreements-block">
+      <!-- ko foreach: $parent.getRegion('before-place-order') -->
+      <!-- ko template: getTemplate() -->
+      <!-- /ko -->
+      <!--/ko-->
+    </div>
+    <div class="actions-toolbar">
+      <div class="primary">
+        <button class="action primary checkout" type="submit" data-bind="
+                        click: placeOrder,
+                        id: 'place-order_' + getCode(),
+                        attr: {title: $t('Place Order')},
+                        css: {disabled: !isPlaceOrderActionAllowed()},
+                        enable: (getCode() == isChecked())
+                        " disabled>
+          <span data-bind="i18n: 'Place Order'"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

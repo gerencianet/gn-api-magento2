@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <default>
+    <payment>
+      <gerencianet_cc>
+        <active>0</active>
+        <title>Gerencianet - Cartão de Crédito</title>
+        <installments>1</installments>
+        <price_min>0</price_min>
+        <payment_action>order</payment_action>
+        <model>Gerencianet\Magento2\Model\Payment\CreditCard</model>
+        <order_status>pending</order_status>
+        <sort_order>0</sort_order>
+      </gerencianet_cc>
+      <gerencianet_boleto>
+        <active>0</active>
+        <title>Gerencianet - Boleto Bancário</title>
+        <validade>1</validade>
+        <multa>0</multa>
+        <juros>0</juros>
+        <sort_order>1</sort_order>
+        <payment_action>order</payment_action>
+        <model>Gerencianet\Magento2\Model\Payment\Billet</model>
+        <gerencianet_instrucoes_boleto>
+          <linha1>Não pague após o vencimento. Após esta data a reserva da compra é cancelada.</linha1>
+          <linha2>Apenas o pagamento do boleto identifica e libera o seu pedido.</linha2>
+          <linha3>Em caso de dúvidas entre em contato conosco.</linha3>
+          <linha4>Pague na lotérica</linha4>
+        </gerencianet_instrucoes_boleto>
+        <order_status>pending</order_status>
+      </gerencianet_boleto>
+      <gerencianet_pix>
+        <active>0</active>
+        <title>Gerencianet - Pix</title>
+        <validade>86400</validade>
+        <sort_order>2</sort_order>
+        <payment_action>order</payment_action>
+        <model>Gerencianet\Magento2\Model\Payment\Pix</model>
+        <order_status>pending</order_status>
+      </gerencianet_pix>
+    </payment>
+  </default>
+</config>
