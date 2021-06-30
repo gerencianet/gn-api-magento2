@@ -23,7 +23,7 @@ Módulo de pagamento do Gerencianet, com os métodos de pagamento de Boleto, PIX
 
 - Realize o download do módulo e siga os seguintes passos de acordo com a forma que sua loja foi instalada:
 
-  #### [Gerencianet_Magento2 ](https://github.com/tezusecommerce/Gerencianet_Magento2)
+  #### [Gerencianet_Magento2 ](https://github.com/gerencianet/gn-api-magento2)
 
 ### Instalar usando o Composer
 
