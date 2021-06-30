@@ -98,7 +98,7 @@ Nesta sessão você tem as configurações de pix.
 ![FOTO 6](.github/img/6.png)
 
 Campos: 
- - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de cartão de crédito.
+ - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de Pix.
  - Título: Altera o nome do método de pagamento no checkout.
  - Dias de validade do Pix: Validade do pix.
  - Certificado Pix: Certificado gerado no painel do Gerencianet
@@ -106,12 +106,12 @@ Campos:
 
 ### Boleto 
 
-Nesta sessão você tem as configurações de pix.
+Nesta sessão você tem as configurações de Boleto.
 
 ![FOTO 7](.github/img/7.png)
 
 Campos: 
- - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de cartão de crédito.
+ - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de Boletos.
  - Título: Altera o nome do método de pagamento no checkout.
  - Dias de validade do Boleto: Validade do Boleto.
  - Multa após o vencimento: Valor da multa a ser cobrada após o vencimento.
