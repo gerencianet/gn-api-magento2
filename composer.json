@@ -1,0 +1,21 @@
+{
+  "name": "gerencianet/module-magento2",
+  "description": "Gerencianet Payment Gateway",
+  "version": "1.0.0",
+  "type": "magento2-module",
+  "license": "OSL-3.0",
+  "authors": [],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.3.0",
+    "gerencianet/gerencianet-sdk-php": "~3.1"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Gerencianet\\Magento2\\": ""
+    }
+  }
+}
