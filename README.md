@@ -16,7 +16,7 @@ Módulo de pagamento do Gerencianet, com os métodos de pagamento de Boleto, PIX
  
 ## Pré requisitos:
 
-- Requer que o PHP esteja no mínimo na versão 7.4.X.
+- Requer que o PHP esteja no mínimo na versão 7.3.x.
 - Requer que o [SDK PHP Gerencianet](https://github.com/gerencianet/gn-api-sdk-php) esteja instalado.
 
 ## Instalação do Módulo Gerencianet:
