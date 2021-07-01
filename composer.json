@@ -1,10 +1,30 @@
 {
   "name": "gerencianet/module-magento2",
   "description": "Gerencianet Payment Gateway",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "magento2-module",
   "license": "OSL-3.0",
-  "authors": [],
+  "authors": [{
+    "name": "Jéssica Gava"
+  },{
+    "name": "Guilherme Cota"
+  },{
+    "name": "Sady Coimbra"
+  },{
+    "name": "Matheus Rodrigues"
+  },{
+    "name": "João Vitor Oliveira"
+  },{
+    "name": "Palloma Brito"
+  },{
+     "name": "Marcelo Machado"
+  },{
+      "name": "Julia Tavares"
+  },{
+      "name": "Igor Pedroso"
+  },{
+      "name": "Luiz Campos"
+  }],
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.3.0",
