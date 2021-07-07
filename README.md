@@ -2,7 +2,7 @@
 
 ![FOTO 1](.github/img/1.png)
 
-Módulo de pagamento do Gerencianet, com os métodos de pagamento de Boleto, PIX e Cartão de Crédito.
+Módulo de pagamento da Gerencianet, com os métodos de pagamento de Boleto, PIX e Cartão de Crédito.
 
 # Instalação
 
@@ -43,7 +43,7 @@ Módulo de pagamento do Gerencianet, com os métodos de pagamento de Boleto, PIX
   1. Extraia o conteúdo do download ZIP e mova o diretório ```\Magento2\``` para dentro da pasta ```Gerencianet``` ;
   2. Verifique se está dessa maneira seus diretórios na sua loja ```app/code/Gerencianet/Magento2```
   3. Habilite o módulo com o seguinte comando, ```bin/magento module:enable Gerencianet_Magento2```
-  4. Instale o SDK PHP do Gerencianet utilizando o seguinte comando ```composer require gerencianet/gerencianet-sdk-php:3.1.0```
+  4. Instale o SDK PHP da Gerencianet utilizando o seguinte comando ```composer require gerencianet/gerencianet-sdk-php:3.1.0```
   5. Execute o comando ```bin/magento setup:upgrade```
   6. Execute o comando ```bin/magento setup:di:compile```
   7. Execute o comando ```bin/magento cache:clean```
@@ -61,7 +61,7 @@ Após realizar a configuração do Cliente, acesse no Painel Administrativo do M
 
 ![FOTO 3](.github/img/3.png)
 
-## Como habilitar o Gerencianet
+## Como habilitar a Gerencianet
 
 No primeiro bloco de informação, está a configuração para habilitar ou desabilitar o módulo por completo, marque `Sim` para continuar a configuração. 
 
@@ -69,8 +69,8 @@ No primeiro bloco de informação, está a configuração para habilitar ou desa
 
 Campos: 
  - Ambiente: Serve para descrever se as transações 
- - Identificador da Conta: Identificador de Conta do Gerencianet
- - Partner Token: Token do seu parceiro no Gerencianet.
+ - Identificador da Conta: Identificador de Conta da Gerencianet
+ - Partner Token: Token do seu parceiro na Gerencianet.
  - Novo Order Status: Serve para após a finalização da compra definir o Status do pedido.
  - Credenciais de Desenvolvimento ou Produção: Aqui você informa as suas credenciais como o Client Id e Client Secret.
 
