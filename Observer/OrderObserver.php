@@ -5,6 +5,7 @@ namespace Gerencianet\Magento2\Observer;
 use Gerencianet\Magento2\Helper\Data;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Event\Observer;
+use Magento\Sales\Model\Order;
 
 class OrderObserver implements ObserverInterface {
 
@@ -16,8 +17,13 @@ class OrderObserver implements ObserverInterface {
   }
 
   public function execute(Observer $observer) {
+    /** @var Order */
     $order = $observer->getEvent()->getOrder();
-    $order->setState("new")->setStatus($this->_helperData->getOrderStatus());
-    $order->save();
+    $payment = $order->getPayment();
+    $methodCode = $payment->getMethod();
+    if (strpos($methodCode, 'gerencianet') !== false) {
+      $order->setState("new")->setStatus($this->_helperData->getOrderStatus());
+      $order->save();
+    }
   }
 }

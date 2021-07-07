@@ -146,6 +146,7 @@ class Data extends AbstractHelper
 
 	public function getOrderStatus()
 	{
-		return $this->getConfig('payment/gerencianet_configuracoes/order_status');
+        $status = $this->getConfig('payment/gerencianet_configuracoes/order_status');
+		return $status ?? 'pending';
 	}
 }
