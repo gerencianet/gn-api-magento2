@@ -4,26 +4,24 @@
 
 Módulo de pagamento da Gerencianet, com os métodos de pagamento de Boleto, PIX e Cartão de Crédito.
 
-# Instalação
+## Pré requisitos:
 
-> Recomendamos que você possua um ambiente de testes para validar as alterações e atualizações antes de atualiar sua loja em produção. Também que seja feito um **backup** com todas as informações antes de executar qualquer procedimento de atualização/instalação.
+- Requer que o PHP esteja no mínimo na versão 7.3.x.
+- Requer que o [SDK PHP Gerencianet](https://github.com/gerencianet/gn-api-sdk-php) esteja instalado.
 
 ## Versões Compativeis:
 - [x] 2.3.X
 - [x] 2.4.0
 - [x] 2.4.1
 - [x] 2.4.2
- 
-## Pré requisitos:
 
-- Requer que o PHP esteja no mínimo na versão 7.3.x.
-- Requer que o [SDK PHP Gerencianet](https://github.com/gerencianet/gn-api-sdk-php) esteja instalado.
+# Instalação
+
+> Recomendamos que você possua um ambiente de testes para validar as alterações e atualizações antes de atualiar sua loja em produção. Também que seja feito um **backup** com todas as informações antes de executar qualquer procedimento de atualização/instalação.
 
 ## Instalação do Módulo Gerencianet:
 
 - Realize o download do módulo e siga os seguintes passos de acordo com a forma que sua loja foi instalada:
-
-  #### [Gerencianet_Magento2 ](https://github.com/gerencianet/gn-api-magento2)
 
 ### Instalar usando o Composer
 
@@ -55,7 +53,7 @@ Acesse no Painel Administrativo do Magento no menu lateral clique em **Lojas > C
 
 ![FOTO 2](.github/img/2.png)
 
-Certifique-se também que o campo de telefone esteja obrigatório.
+**Certifique-se também que o campo de telefone esteja obrigatório.**
 
 Após realizar a configuração do Cliente, acesse no Painel Administrativo do Magento No menu lateral clique em `Lojas`, na sequencia clique em `Configuração`, no sub-menu `Vendas` clique em `Formas de Pagamento`. Será carregada a tela para configurar os meios de pagamentos do site.
 
@@ -68,15 +66,14 @@ No primeiro bloco de informação, está a configuração para habilitar ou desa
 ![FOTO 4](.github/img/4.png)
 
 Campos: 
- - Ambiente: Serve para descrever se as transações 
- - Identificador da Conta: Identificador de Conta da Gerencianet
- - Partner Token: Token do seu parceiro na Gerencianet.
- - Novo Order Status: Serve para após a finalização da compra definir o Status do pedido.
- - Credenciais de Desenvolvimento ou Produção: Aqui você informa as suas credenciais como o Client Id e Client Secret.
+ - **Ambiente**: Serve para descrever se as transações 
+ - **Identificador da Conta:** Identificador de Conta da Gerencianet
+ - **Novo Order Status:** Serve para após a finalização da compra definir o Status do pedido.
+ - **Credenciais de Desenvolvimento ou Produção:** Aqui você informa as suas credenciais como o Client Id e Client Secret.
 
 Em seguida temos as configurações de cartão de crédito, configurações de boleto e configurações de pix.
 
-OBS: Para que todas as configurações a seguir funcionem, todo o passo a passo anterior deve ter sido seguido.
+_OBS: Para que todas as configurações a seguir funcionem, todo o passo a passo anterior deve ter sido seguido._
 
 ### Cartão de Crédito 
 
@@ -85,9 +82,9 @@ Nesta sessão você tem as configurações de cartão de crédito.
 ![FOTO 5](.github/img/5.png)
 
 Campos: 
- - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de cartão de crédito.
- - Título: Altera o nome do método de pagamento no checkout.
- - Sort Order: Ordenação do método de pagamento.
+ - **Habilitado:** Serve para habilitar ou desabilitar a funcionalidade de cartão de crédito.
+ - **Título:** Altera o nome do método de pagamento no checkout.
+ - **Sort Order:** Ordenação do método de pagamento.
 
 *OBS: Toda configuração de parcelamento, é realizada através do painel do Gerencianet.*
 
@@ -98,11 +95,11 @@ Nesta sessão você tem as configurações de pix.
 ![FOTO 6](.github/img/6.png)
 
 Campos: 
- - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de Pix.
- - Título: Altera o nome do método de pagamento no checkout.
- - Dias de validade do Pix: Validade do pix.
- - Certificado Pix: Certificado gerado no painel do Gerencianet
- - Chave Pix: Sua chave pix cadastrada no aplicativo do Gerencianet
+ - **Habilitado:** Serve para habilitar ou desabilitar a funcionalidade de Pix.
+ - **Título:** Altera o nome do método de pagamento no checkout.
+ - **Dias de validade do Pix:** Validade do pix.
+ - **Certificado Pix:** Certificado gerado no painel do Gerencianet
+ - **Chave Pix:** Sua chave pix cadastrada no aplicativo do Gerencianet
 
 ### Boleto 
 
@@ -111,10 +108,10 @@ Nesta sessão você tem as configurações de Boleto.
 ![FOTO 7](.github/img/7.png)
 
 Campos: 
- - Habilitado: Serve para habilitar ou desabilitar a funcionalidade de Boletos.
- - Título: Altera o nome do método de pagamento no checkout.
- - Dias de validade do Boleto: Validade do Boleto.
- - Multa após o vencimento: Valor da multa a ser cobrada após o vencimento.
- - Juros após o vencimento: Valor de juros a ser cobrado.
- - Sort Order: Ordenação do método de pagamento
- - Instruções no boleto: Aqui você tem quatro campos que podem ser preenchido com mensagens no boleto, desde que as opções de juros e multa estejam zeradas.
+ - **Habilitado:** Serve para habilitar ou desabilitar a funcionalidade de Boletos.
+ - **Título:** Altera o nome do método de pagamento no checkout.
+ - **Dias de validade do Boleto:** Validade do Boleto.
+ - **Multa após o vencimento:** Valor da multa a ser cobrada após o vencimento.
+ - **Juros após o vencimento:** Valor de juros a ser cobrado.
+ - **Sort Order:** Ordenação do método de pagamento
+ - **Instruções no boleto:** Aqui você tem quatro campos que podem ser preenchido com mensagens no boleto, desde que as opções de juros e multa estejam zeradas.
