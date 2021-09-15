@@ -162,7 +162,7 @@ class CreditCard extends AbstractMethod
 
             $api = new Gerencianet($options);
             $pay_charge = $api->oneStep([], $data);
-
+            $order->setCustomerTaxvat($paymentInfo['cpfCustomer']);
             $order->setGerencianetTransactionId($pay_charge['data']['charge_id']);
         } catch (\Exception $e) {
             throw new LocalizedException(__($e->getMessage()));
