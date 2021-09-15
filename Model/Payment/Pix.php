@@ -113,7 +113,7 @@ class Pix extends AbstractMethod
 			];
 
 			$qrcode = $api->pixGenerateQRCode($params);
-
+            $order->setCustomerTaxvat($paymentInfo['cpfCustomer']);
 			$order->setGerencianetTransactionId($pix['txid']);
 			$order->setGerencianetChavePix($qrcode['qrcode']);
 			$order->setGerencianetQrcodePix($qrcode['imagemQrcode']);

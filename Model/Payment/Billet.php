@@ -166,7 +166,7 @@ class Billet extends AbstractMethod {
       $api = new Gerencianet($options);
 
       $payCharge = $api->oneStep([], $data);
-
+      $order->setCustomerTaxvat($paymentInfo['cpfCustomer']);
       $order->setGerencianetCodigoDeBarras($payCharge['data']['barcode']);
       $order->setGerencianetTransactionId($payCharge['data']['charge_id']);
       $order->setGerencianetUrlBoleto($payCharge['data']['pdf']['charge']);
