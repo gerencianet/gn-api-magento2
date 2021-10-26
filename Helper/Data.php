@@ -104,8 +104,8 @@ class Data extends AbstractHelper
 	/** Escreve um log na pasta var */
 	public function logger($string)
 	{
-		$writer = new \Zend\Log\Writer\Stream(BP . '/var/log/gerencianet_magento2.log');
-		$logger = new \Zend\Log\Logger();
+		$writer = new \Laminas\Log\Writer\Stream(BP . '/var/log/gerencianet_magento2.log');
+		$logger = new \Laminas\Log\Logger();
 		$logger->addWriter($writer);
 		$logger->info(json_encode($string));
 	}
