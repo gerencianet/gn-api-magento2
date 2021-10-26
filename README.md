@@ -14,6 +14,7 @@ Módulo de pagamento da Gerencianet, com os métodos de pagamento de Boleto, PIX
 - [x] 2.4.0
 - [x] 2.4.1
 - [x] 2.4.2
+- [x] 2.4.3
 
 # Instalação
 
@@ -42,9 +43,10 @@ Módulo de pagamento da Gerencianet, com os métodos de pagamento de Boleto, PIX
   2. Verifique se está dessa maneira seus diretórios na sua loja ```app/code/Gerencianet/Magento2```
   3. Habilite o módulo com o seguinte comando, ```bin/magento module:enable Gerencianet_Magento2```
   4. Instale o SDK PHP da Gerencianet utilizando o seguinte comando ```composer require gerencianet/gerencianet-sdk-php:3.1.0```
-  5. Execute o comando ```bin/magento setup:upgrade```
-  6. Execute o comando ```bin/magento setup:di:compile```
-  7. Execute o comando ```bin/magento cache:clean```
+  5. Instale o pacote de log através do comando ```composer require laminas/laminas-log```
+  6. Execute o comando ```bin/magento setup:upgrade```
+  7. Execute o comando ```bin/magento setup:di:compile```
+  8. Execute o comando ```bin/magento cache:clean```
  
 
 # Configurações
