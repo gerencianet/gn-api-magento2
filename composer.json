@@ -1,7 +1,7 @@
 {
   "name": "gerencianet/module-magento2",
   "description": "Gerencianet Payment Gateway",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "type": "magento2-module",
   "license": "OSL-3.0",
   "authors": [{

@@ -14,7 +14,7 @@ class Success extends Template {
   public function __construct(
     Session $checkoutSession,
     Context $context,
-    array $data = []
+    array $data = null
   ) {
     parent::__construct($context, $data);
     $this->_checkoutSession = $checkoutSession;

@@ -13,7 +13,7 @@ class Custom extends Template {
   public function __construct(
     Template\Context $context,
     OrderRepositoryInterface $orderRepositoryInterface,
-    array $data = []
+    array $data = null
   ) {
     parent::__construct($context, $data);
     $this->_orderRepositoryInterface = $orderRepositoryInterface;
