@@ -48,6 +48,9 @@ class Pix extends AbstractMethod
 		GerencianetHelper $helperData,
 		StoreManagerInterface $storeManager
 	) {
+		if ($data == null) {
+			$data = [];
+		  }
 		parent::__construct(
 			$context,
 			$registry,

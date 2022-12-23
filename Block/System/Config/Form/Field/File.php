@@ -17,9 +17,12 @@ class File extends MageFile {
         \Magento\Framework\Data\Form\Element\Factory $factoryElement,
         \Magento\Framework\Data\Form\Element\CollectionFactory $factoryCollection,
         \Magento\Framework\Escaper $escaper,
-        $data = [],
+        array $data = null,
         DirectoryList $dl
     ) {
+        if ($data == null) {
+            $data = [];
+          }
         parent::__construct($factoryElement, $factoryCollection, $escaper, $data);
         $this->_dir = $dl;
     }

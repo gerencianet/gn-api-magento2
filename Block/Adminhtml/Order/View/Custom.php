@@ -15,6 +15,9 @@ class Custom extends Template {
     OrderRepositoryInterface $orderRepositoryInterface,
     array $data = null
   ) {
+    if ($data == null) {
+      $data = [];
+    }
     parent::__construct($context, $data);
     $this->_orderRepositoryInterface = $orderRepositoryInterface;
   }

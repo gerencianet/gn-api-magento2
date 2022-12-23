@@ -53,6 +53,9 @@ class CreditCard extends AbstractMethod
         StoreManagerInterface $storeManager,
         Session $checkoutSession
     ) {
+        if ($data == null) {
+            $data = [];
+          }
         parent::__construct(
             $context,
             $registry,

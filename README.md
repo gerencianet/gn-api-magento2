@@ -10,11 +10,8 @@ Módulo de pagamento da Gerencianet, com os métodos de pagamento de Boleto, PIX
 - Requer que o [SDK PHP Gerencianet](https://github.com/gerencianet/gn-api-sdk-php) esteja instalado.
 
 ## Versões Compativeis:
-- [x] 2.3.X
-- [x] 2.4.0
-- [x] 2.4.1
-- [x] 2.4.2
-- [x] 2.4.3
+- [x] 2.4.4
+- [x] 2.4.5
 
 # Instalação
 
