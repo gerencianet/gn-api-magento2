@@ -13,8 +13,11 @@ class Info extends Template {
   public function __construct(
     Template\Context $context,
     OrderRepositoryInterface $orderRepositoryInterface,
-    array $data = []
+    array $data = null
   ) {
+    if ($data == null) {
+      $data = [];
+    }
     parent::__construct($context, $data);
     $this->_orderRepositoryInterface = $orderRepositoryInterface;
   }

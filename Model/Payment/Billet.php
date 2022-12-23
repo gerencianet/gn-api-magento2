@@ -50,11 +50,14 @@ class Billet extends AbstractMethod {
     Logger $logger,
     AbstractResource $resource = null,
     AbstractDb $resourceCollection = null,
-    array $data = [],
+    array $data = null,
     GerencianetHelper $helperData,
     StoreManagerInterface $storeManager,
     Session $checkoutSession
   ) {
+    if ($data == null) {
+      $data = [];
+    }
     parent::__construct(
       $context,
       $registry,
