@@ -93,7 +93,7 @@ class Pix extends AbstractMethod
 			$options['pix_cert'] = $certificadoPix;
 
 			$data = [];
-			$data['calendario']['expiracao'] = 3600;
+			$data['calendario']['expiracao'] = $this->_helperData->getPixExpiration() ?? 3600;
 			if ($paymentInfo['documentType'] == "CPF") {
 				$data['devedor']['cpf'] = $paymentInfo['cpfCustomer'];
 			} else if ($paymentInfo['documentType'] == "CNPJ") {
