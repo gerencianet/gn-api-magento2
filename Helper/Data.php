@@ -125,6 +125,11 @@ class Data extends AbstractHelper
 		return $this->getConfig('payment/gerencianet_pix/chave_pix');
 	}
 
+	public function getPixExpiration()
+	{
+		return $this->getConfig('payment/gerencianet_pix/validade');
+	}
+
 	public function getStoreName()
 	{
 		return $this->getConfig('general/store_information/name');
